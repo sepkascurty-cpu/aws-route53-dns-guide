@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#444444"/>
+    </marker>
+    <marker id="arrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#7B5EA7"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1280" height="1060" fill="#ffffff"/>
+
+  <!-- AWS Cloud outer -->
+  <rect x="16" y="16" width="1248" height="1028" rx="8" fill="none" stroke="#333333" stroke-width="2"/>
+  <rect x="28" y="28" width="64" height="40" fill="#232F3E"/>
+  <text x="60" y="54" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="bold">aws</text>
+  <text x="102" y="54" fill="#232F3E" font-size="18" font-weight="bold">AWS Cloud</text>
+
+  <!-- Legend -->
+  <g font-size="11">
+    <text x="1062" y="60" fill="#232F3E" font-size="12" font-weight="bold">Legend</text>
+    <rect x="1062" y="68" width="14" height="14" fill="#FF9900"/><text x="1082" y="80" fill="#333">Compute (EC2)</text>
+    <rect x="1062" y="88" width="14" height="14" fill="#3B48CC"/><text x="1082" y="100" fill="#333">Database (RDS)</text>
+    <rect x="1062" y="108" width="14" height="14" fill="#7B5EA7"/><text x="1082" y="120" fill="#333">Networking (Route 53 / ELB)</text>
+    <rect x="1062" y="128" width="14" height="14" fill="#DD344C"/><text x="1082" y="140" fill="#333">Security (WAF / Shield)</text>
+    <rect x="1062" y="148" width="14" height="10" fill="none" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,3"/><text x="1082" y="157" fill="#333">Availability Zone</text>
+  </g>
+
+  <!-- ============ ROW 1: edge / DNS ============ -->
+  <!-- Clients -->
+  <circle cx="110" cy="115" r="30" fill="#EAF2F8" stroke="#2E86C1" stroke-width="2"/>
+  <ellipse cx="110" cy="115" rx="14" ry="30" fill="none" stroke="#2E86C1" stroke-width="1.5"/>
+  <line x1="80" y1="115" x2="140" y2="115" stroke="#2E86C1" stroke-width="1.5"/>
+  <text x="110" y="165" text-anchor="middle" fill="#232F3E" font-size="12" font-weight="bold">Clients</text>
+  <text x="170" y="100" fill="#232F3E" font-size="12">www.example.com</text>
+  <text x="170" y="120" fill="#232F3E" font-size="12">api.example.com</text>
+  <text x="170" y="145" fill="#777777" font-size="11" font-style="italic">global users</text>
+
+  <!-- Route 53 -->
+  <rect x="300" y="80" width="240" height="110" rx="10" fill="#7B5EA7"/>
+  <text x="420" y="115" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">Amazon Route 53</text>
+  <text x="420" y="137" text-anchor="middle" fill="#ffffff" font-size="12">DNS service — 7 routing policies</text>
+  <text x="420" y="159" text-anchor="middle" fill="#ffffff" font-size="11">100% SLA on DNS queries</text>
+  <text x="420" y="212" text-anchor="middle" fill="#232F3E" font-size="12" font-weight="bold">Public hosted zone: example.com</text>
+
+  <!-- CloudFront -->
+  <rect x="600" y="80" width="190" height="110" rx="10" fill="#7B5EA7"/>
+  <text x="695" y="115" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">CloudFront</text>
+  <text x="695" y="137" text-anchor="middle" fill="#ffffff" font-size="12">CDN — 400+ edge locations</text>
+  <text x="695" y="159" text-anchor="middle" fill="#ffffff" font-size="11">caches static, shields origin</text>
+
+  <!-- WAF -->
+  <rect x="830" y="80" width="170" height="110" rx="10" fill="#DD344C"/>
+  <text x="915" y="115" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">AWS WAF</text>
+  <text x="915" y="137" text-anchor="middle" fill="#ffffff" font-size="12">Web Application Firewall</text>
+  <text x="915" y="159" text-anchor="middle" fill="#ffffff" font-size="11">+ Shield: DDoS protection</text>
+
+  <!-- Health checks -->
+  <rect x="1040" y="80" width="190" height="110" rx="10" fill="#F4EEFB" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="1135" y="110" text-anchor="middle" fill="#7B5EA7" font-size="13" font-weight="bold">Route 53 Health Checks</text>
+  <text x="1135" y="130" text-anchor="middle" fill="#555555" font-size="11">probes from 30+ regions</text>
+  <text x="1135" y="148" text-anchor="middle" fill="#555555" font-size="11">every 10s / 30s</text>
+  <text x="1135" y="166" text-anchor="middle" fill="#555555" font-size="11">3 fails = unhealthy</text>
+
+  <!-- arrows row 1 -->
+  <line x1="255" y1="115" x2="300" y2="115" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="258" y="100" fill="#232F3E" font-size="12" font-weight="bold">1. DNS query (UDP 53)</text>
+  <line x1="540" y1="115" x2="600" y2="115" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="543" y="100" fill="#232F3E" font-size="12" font-weight="bold">2. alias → CloudFront</text>
+  <line x1="790" y1="115" x2="830" y2="115" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="793" y="100" fill="#232F3E" font-size="12" font-weight="bold">3. WAF inspect</text>
+
+  <!-- ============ ROW 2: hybrid DNS strip ============ -->
+  <rect x="60" y="240" width="340" height="50" fill="none" stroke="#7AA800" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <text x="76" y="262" fill="#5A7A00" font-size="12" font-weight="bold">On-premises datacenter</text>
+  <text x="76" y="280" fill="#555555" font-size="11">corp DNS: 10.50.0.2 — owns corp.internal</text>
+
+  <rect x="440" y="240" width="160" height="50" rx="8" fill="#7B5EA7"/>
+  <text x="520" y="262" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Resolver inbound</text>
+  <text x="520" y="280" text-anchor="middle" fill="#ffffff" font-size="10">on-prem → private zones</text>
+
+  <rect x="640" y="240" width="160" height="50" rx="8" fill="#7B5EA7"/>
+  <text x="720" y="262" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Resolver outbound</text>
+  <text x="720" y="280" text-anchor="middle" fill="#ffffff" font-size="10">VPC → on-prem DNS</text>
+
+  <text x="840" y="258" fill="#232F3E" font-size="12" font-weight="bold">5. Hybrid DNS:</text>
+  <text x="840" y="278" fill="#555555" font-size="11">forwarding rule — corp.internal → forward to 10.50.0.2 via Direct Connect / VPN</text>
+
+  <line x1="400" y1="265" x2="440" y2="265" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowP)"/>
+  <line x1="800" y1="265" x2="400" y2="265" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowP)"/>
+
+  <!-- ============ VPC ============ -->
+  <rect x="28" y="310" width="1224" height="680" fill="none" stroke="#7AA800" stroke-width="2"/>
+  <text x="44" y="334" fill="#5A7A00" font-size="14" font-weight="bold">VPC — example-vpc (10.0.0.0/16)</text>
+
+  <!-- AZ boxes -->
+  <rect x="48" y="345" width="560" height="625" fill="none" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <text x="64" y="369" fill="#2E86C1" font-size="13" font-weight="bold">Availability Zone 1</text>
+  <rect x="672" y="345" width="560" height="625" fill="none" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <text x="688" y="369" fill="#2E86C1" font-size="13" font-weight="bold">Availability Zone 2</text>
+
+  <!-- ALB spanning AZs -->
+  <rect x="560" y="345" width="160" height="70" rx="10" fill="#7B5EA7"/>
+  <text x="640" y="370" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Elastic Load</text>
+  <text x="640" y="388" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Balancing</text>
+  <text x="640" y="404" text-anchor="middle" fill="#ffffff" font-size="10">Application LB</text>
+
+  <!-- AZ-1 subnets -->
+  <rect x="68" y="430" width="520" height="80" fill="#EAF7E4" stroke="#7AA800" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="82" y="452" fill="#5A7A00" font-size="12" font-weight="bold">Public subnet (10.0.1.0/24)</text>
+  <rect x="100" y="460" width="130" height="40" rx="8" fill="#7B5EA7"/>
+  <text x="165" y="485" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">NAT gateway</text>
+
+  <rect x="68" y="525" width="520" height="160" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="82" y="547" fill="#2E86C1" font-size="12" font-weight="bold">Web subnet (10.0.11.0/24)</text>
+  <rect x="88" y="557" width="480" height="118" fill="none" stroke="#FF9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="328" y="575" text-anchor="middle" fill="#B26A00" font-size="11" font-weight="bold">Auto Scaling group — web tier</text>
+  <rect x="120" y="585" width="110" height="70" rx="8" fill="#FF9900"/>
+  <text x="175" y="612" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="175" y="630" text-anchor="middle" fill="#ffffff" font-size="10">web server</text>
+  <rect x="260" y="585" width="110" height="70" rx="8" fill="#FF9900"/>
+  <text x="315" y="612" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="315" y="630" text-anchor="middle" fill="#ffffff" font-size="10">web server</text>
+
+  <rect x="68" y="700" width="520" height="110" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="82" y="722" fill="#2E86C1" font-size="12" font-weight="bold">App subnet — private (10.0.12.0/24)</text>
+  <rect x="120" y="730" width="110" height="60" rx="8" fill="#FF9900"/>
+  <text x="175" y="755" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="175" y="772" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+  <rect x="260" y="730" width="110" height="60" rx="8" fill="#FF9900"/>
+  <text x="315" y="755" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="315" y="772" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+
+  <rect x="68" y="825" width="520" height="110" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="82" y="847" fill="#2E86C1" font-size="12" font-weight="bold">DB subnet — private (10.0.13.0/24)</text>
+  <rect x="120" y="855" width="150" height="60" rx="8" fill="#3B48CC"/>
+  <text x="195" y="880" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Amazon RDS</text>
+  <text x="195" y="898" text-anchor="middle" fill="#ffffff" font-size="10">PostgreSQL — primary</text>
+
+  <!-- AZ-2 subnets -->
+  <rect x="692" y="430" width="520" height="80" fill="#EAF7E4" stroke="#7AA800" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="706" y="452" fill="#5A7A00" font-size="12" font-weight="bold">Public subnet (10.0.2.0/24)</text>
+  <rect x="724" y="460" width="130" height="40" rx="8" fill="#7B5EA7"/>
+  <text x="789" y="485" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">NAT gateway</text>
+
+  <rect x="692" y="525" width="520" height="160" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="706" y="547" fill="#2E86C1" font-size="12" font-weight="bold">Web subnet (10.0.21.0/24)</text>
+  <rect x="712" y="557" width="480" height="118" fill="none" stroke="#FF9900" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="952" y="575" text-anchor="middle" fill="#B26A00" font-size="11" font-weight="bold">Auto Scaling group — web tier</text>
+  <rect x="744" y="585" width="110" height="70" rx="8" fill="#FF9900"/>
+  <text x="799" y="612" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="799" y="630" text-anchor="middle" fill="#ffffff" font-size="10">web server</text>
+  <rect x="884" y="585" width="110" height="70" rx="8" fill="#FF9900"/>
+  <text x="939" y="612" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="939" y="630" text-anchor="middle" fill="#ffffff" font-size="10">web server</text>
+
+  <rect x="692" y="700" width="520" height="110" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="706" y="722" fill="#2E86C1" font-size="12" font-weight="bold">App subnet — private (10.0.22.0/24)</text>
+  <rect x="744" y="730" width="110" height="60" rx="8" fill="#FF9900"/>
+  <text x="799" y="755" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="799" y="772" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+  <rect x="884" y="730" width="110" height="60" rx="8" fill="#FF9900"/>
+  <text x="939" y="755" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+  <text x="939" y="772" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+
+  <rect x="692" y="825" width="520" height="110" fill="#E8ECFA" stroke="#2E86C1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="706" y="847" fill="#2E86C1" font-size="12" font-weight="bold">DB subnet — private (10.0.23.0/24)</text>
+  <rect x="744" y="855" width="150" height="60" rx="8" fill="#3B48CC"/>
+  <text x="819" y="880" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Amazon RDS</text>
+  <text x="819" y="898" text-anchor="middle" fill="#ffffff" font-size="10">PostgreSQL — standby</text>
+
+  <!-- labeled traffic arrows -->
+  <!-- origin fetch: CloudFront -> ALB -->
+  <line x1="695" y1="190" x2="655" y2="345" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="700" y="265" fill="#232F3E" font-size="12" font-weight="bold">origin fetch (HTTPS)</text>
+
+  <!-- ALB -> web tiers -->
+  <line x1="600" y1="415" x2="330" y2="525" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="680" y1="415" x2="950" y2="525" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="470" y="445" fill="#232F3E" font-size="12" font-weight="bold">6. forward to healthy targets</text>
+
+  <!-- web -> app -->
+  <line x1="250" y1="685" x2="250" y2="700" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="874" y1="685" x2="874" y2="700" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="420" y="697" fill="#232F3E" font-size="12" font-weight="bold">7. app tier (private)</text>
+
+  <!-- app -> db -->
+  <line x1="250" y1="810" x2="250" y2="825" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="874" y1="810" x2="874" y2="825" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="420" y="822" fill="#232F3E" font-size="12" font-weight="bold">8. DB queries</text>
+
+  <!-- RDS replication -->
+  <line x1="270" y1="885" x2="744" y2="885" stroke="#3B48CC" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <text x="430" y="872" fill="#3B48CC" font-size="12" font-weight="bold">Multi-AZ sync replication</text>
+
+  <!-- health probes: health checks box -> web tiers -->
+  <line x1="1135" y1="190" x2="1000" y2="430" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowP)"/>
+  <line x1="1135" y1="190" x2="420" y2="430" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowP)"/>
+  <text x="770" y="330" fill="#7B5EA7" font-size="12" font-weight="bold">4. /health probes — verdicts drive Route 53 failover</text>
+
+  <!-- title strip -->
+  <text x="640" y="1022" text-anchor="middle" fill="#232F3E" font-size="16" font-weight="bold">AWS Route 53 — alias to CloudFront, WAF at the edge, health-checked failover, hybrid DNS via Resolver</text>
+</svg>
